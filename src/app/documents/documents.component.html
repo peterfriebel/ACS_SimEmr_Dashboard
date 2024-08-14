@@ -1,0 +1,29 @@
+<div class="col rowHeight overflow-auto m-4" style="height: 600px; width: 800px;">
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th scope="col">Document Name</th>
+                <th scope="col">Document Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let document of documents">
+                <td>{{document.DocumentName}}</td>
+                <td><input type="datetime-local" name="documentdate" [(ngModel)]="document.AuthoredDtm">
+                    <button type="button" class="btn btn-primary m-2" (click)="SetDocumentDtm(document.DocumentGuid, document.AuthoredDtm)">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="doneToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Done
+      </div>
+    </div>
+  </div>

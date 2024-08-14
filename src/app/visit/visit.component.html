@@ -1,0 +1,7 @@
+<div class="custom-select">
+    <select class="custom-select" [(ngModel)]="visitGuid"
+    (change)="VisitSelected()">
+        <option value="default">--</option>
+        <option *ngFor="let visit of clientVisits" [value]="visit.VisitGuid">{{visit.ClientDisplayName}}</option>
+    </select>
+</div>
